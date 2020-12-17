@@ -21,14 +21,6 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-function truncate(str) {
-  if (str.length > 100) {
-    return str.substring(0, 100) + "...";
-  } else {
-    return str;
-  }
-}
-
 app.get("/", function (req, res) {
   res.render("home", {
     homeStartingContent: homeStartingContent,
